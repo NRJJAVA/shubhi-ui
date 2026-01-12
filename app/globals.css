@@ -80,3 +80,145 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* ------------------------------
+   BACKGROUND & LAYOUT
+--------------------------------*/
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #ffe4ec, #ffd3e2, #ffe9d2);
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease infinite;
+  font-family: 'Poppins', sans-serif;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ------------------------------
+   BALLOONS
+--------------------------------*/
+.balloon {
+  position: absolute;
+  font-size: 2.5rem;
+  animation: balloonFloat 8s linear infinite;
+}
+
+@keyframes balloonFloat {
+  0% { transform: translateY(100vh); }
+  100% { transform: translateY(-20vh); }
+}
+
+/* ------------------------------
+   FLOATING HEARTS
+--------------------------------*/
+.heart {
+  position: absolute;
+  color: #ff5b82;
+  opacity: 0.7;
+  animation: heartFloat 4.5s ease-in-out infinite;
+}
+
+@keyframes heartFloat {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-180px) scale(1.5); opacity: 0; }
+}
+
+/* ------------------------------
+   SPARKLES
+--------------------------------*/
+.sparkle {
+  position: absolute;
+  color: #ffb300;
+  opacity: 0.5;
+  animation: sparkleFloat 3s ease-in-out infinite;
+}
+
+@keyframes sparkleFloat {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: scale(1.2); opacity: 0; }
+}
+
+/* ------------------------------
+   FIREWORKS
+--------------------------------*/
+.firework {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ffe066;
+  border-radius: 50%;
+  animation: explode 1.2s ease-out forwards;
+}
+
+@keyframes explode {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+/* ------------------------------
+   CARD
+--------------------------------*/
+.card {
+  max-width: 750px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.65);
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 10px 35px rgba(255, 100, 150, 0.25);
+  backdrop-filter: blur(12px);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ------------------------------
+   TYPEWRITER
+--------------------------------*/
+.typewriter {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff4f7b, #ff7f4f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 2s ease-in-out infinite;
+  text-align: center;
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .5; }
+}
+
+/* ------------------------------
+   CANDLE FLAME
+--------------------------------*/
+.flame {
+  width: 8px;
+  height: 22px;
+  background: linear-gradient(#ffb300, #ff6200);
+  border-radius: 6px;
+  margin: 0 auto;
+  animation: flameFlicker 1s ease-in-out infinite;
+}
+
+@keyframes flameFlicker {
+  0% { transform: scaleY(1); }
+  50% { transform: scaleY(1.4); }
+  100% { transform: scaleY(1); }
+}
